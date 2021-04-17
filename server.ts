@@ -17,7 +17,7 @@ export function app(): express.Express {
   const server = express();
   const distFolder = join(process.cwd(), 'dist/browser');
   const indexHtml = existsSync(join(distFolder, 'index.original.html')) ? 'index.original.html' : 'index';
-  const apiKey = process.env.TOKEN;
+  const apiKey = process.env.TOKEN || '13053ceae9c1a509e7656689c2fe07c0';
   server.use(bodyParser.urlencoded({extended: true}));
 
   // Our Universal express-engine (found @ https://github.com/angular/universal/tree/master/modules/express-engine)
